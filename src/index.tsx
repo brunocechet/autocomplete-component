@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+
+import ErrorBoundary from "./components/error-boundary";
+import PoetryPage from "./pages/poetry";
+import reportWebVitals from "./reportWebVitals";
+
+import "./index.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <></>
+    <ErrorBoundary>
+      <PoetryPage />
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

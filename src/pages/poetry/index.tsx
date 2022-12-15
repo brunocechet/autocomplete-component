@@ -4,6 +4,8 @@ import AutoComplete, { ItemT } from "../../components/autocomplete";
 
 import { searchPoemsByTitle } from "../../apis/poetrydb";
 
+import "./poetry.css";
+
 export default function Poetry() {
   const [items, setItems] = React.useState<ItemT[]>([]);
 
@@ -38,5 +40,14 @@ export default function Poetry() {
     [onChange]
   );
 
-  return <AutoComplete items={items} onChange={debouncedOnChange} />;
+  return (
+    <div className="poetry">
+      <label>
+        Search for poems by title:
+        <br />
+        <small>Try "angels"</small>
+        <AutoComplete items={items} onChange={debouncedOnChange} />
+      </label>
+    </div>
+  );
 }
